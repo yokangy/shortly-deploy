@@ -1,0 +1,16 @@
+Wed Jan 14 2015 15:27:40 GMT-0800 (PST):
+{ [Error: EISDIR, illegal operation on a directory]
+  stack: [Getter/Setter],
+  errno: 28,
+  code: 'EISDIR',
+  syscall: 'read',
+  __frame: undefined,
+  rawStack: [Getter] }
+Error: EISDIR, illegal operation on a directory
+    at Object.fs.readSync (fs.js:476:19)
+    at Object.fs.readFileSync (fs.js:310:28)
+    at readFileContents (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/lib/util/profile/publishSettings.js:28:23)
+    at Object.importPublishSettings [as import] (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/lib/util/profile/publishSettings.js:91:13)
+    at Profile._.extend.importPublishSettings (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/lib/util/profile/profile.js:193:34)
+    at __5 (/Users/student/.nvm/v0.10.26/lib/node_modules/azure-cli/lib/commands/account._js:115:23)
+
