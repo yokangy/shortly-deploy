@@ -15,7 +15,8 @@ var Schema = mongoose.Schema;
 //   }
 // });
 
-mongoose.connect('mongodb://localhost/shortlydb');
+var connectionString = process.env.APPSETTING_DB_CONNECTION_STRING || 'mongodb://localhost/shortlydb';
+mongoose.connect(connectionString);
 
 // db.knex.schema.hasTable('urls').then(function(exists) {
 //   if (!exists) {
