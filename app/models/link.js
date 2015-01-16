@@ -17,13 +17,12 @@ var mongoose = require('mongoose');
 //   }
 // });
 //
-db.urlsSchema.methods.createCode = function(){
+db.urlsSchema.pre('save', function(next){
   var shasum = crypto.createHash('sha1');
   shasum.update(this.url);
-  return shasum.digest('hex').slice(0, 5);
-  // this.code = shasum.digest('hex').slice(0, 5);
-  // this.save();
-};
+  this.code = shasum.digest('hex').slice(0, 5);
+  next();
+});
 
 var Link = mongoose.model('Link', db.urlsSchema);
 
